@@ -1,17 +1,18 @@
-from globals import *
-def oblicz_pole_prostokata(a, b):
-    return a * b
-def oblicz_pole_trojkata(a, h):
-    return 0.5 * a * h
+from pole_trojkata import area_triangle
+from pole_prostokata import square_area
+from globals import a, b
 
 
-def oblicz_pole_figur(geometry):
-    if geometry == 'prostokat':
-        return oblicz_pole_prostokata(bok_prostokata, bok_prostokata)
-    elif geometry == 'trojkat':
-        return oblicz_pole_trojkata(podstawa_trojkata, wysokosc_trojkata)
-    elif geometry == 'kwadrat':
-        return oblicz_pole_prostokata(bok_kwadratu, bok_kwadratu)
+def area(figure, x=a, y=b):
+    match figure:
+        case 'kwadrat':
+            print(square_area(x, y))
+        case 'trojkat':
+            print(area_triangle(x, y))
+        case 'prostokat':
+            print(square_area(x, y))
+        case _:
+            print("Zla nazwa figury")
 
 
 

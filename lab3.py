@@ -55,23 +55,23 @@
 #zad9
 
 
-loginy = []
-haslo = []
-while True:
-    login = input("wpisz login: ")
-    password = input("wpisz haslo: ")
-    if login.lower() == 'stop' or password.lower() == 'stop':
-        break
-    if login in loginy:
-        continue
-    if password in haslo:
-        continue
-    loginy.append(login)
-    haslo.append(password)
-dict_log_pass = dict(zip(loginy, haslo))
+# loginy = []
+# haslo = []
+# while True:
+#     login = input("wpisz login: ")
+#     password = input("wpisz haslo: ")
+#     if login.lower() == 'stop' or password.lower() == 'stop':
+#         break
+#     if login in loginy:
+#         continue
+#     if password in haslo:
+#         continue
+#     loginy.append(login)
+#     haslo.append(password)
+# dict_log_pass = dict(zip(loginy, haslo))
 
 #zad10
-
+# from stars import Pion, Poziom
 # Poziom(3)
 # Pion(2)
 # Poziom(3)
@@ -98,13 +98,13 @@ dict_log_pass = dict(zip(loginy, haslo))
 # print(numer_filter)
 
 #zad13
-# import functools
-#
-# numer = functools.reduce(lambda x, y: x * y, [x for x in range(1, 100)])
+import functools
+
+numer = functools.reduce(lambda x, y: x * y, [x for x in range(1, 100)])
 #zad14
 
-# numbers_filtered = list(filter(lambda number: True if number % 7 == 0 and number % 5 != 0 else False, [x for x in range(2000, 3201)]))
-# print(numbers_filtered)
+numbers_filtered = list(filter(lambda number: True if number % 7 == 0 and number % 5 != 0 else False, [x for x in range(2000, 3201)]))
+print(numbers_filtered)
 
 
 

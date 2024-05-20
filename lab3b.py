@@ -1,3 +1,15 @@
+#zad 0
+# from Rozprawka import rozprawka
+#
+# print(f"Posąg Zeusa w Olimpii Miał 14 m wysokości."
+#       f"{rozprawka()}"
+#       f" Przedstawiał boga siedzącego na tronie. "
+#       f"{rozprawka()}"
+#       f" W jednej ręce trzymał statuę bogini Nike, w drugiej berło inkrustowane drogocennymi kamieniami. "
+#       f"{rozprawka()}"
+#       f"Na głowie miał wieniec z gałązek oliwnych, z lewego ramienia zwisał mu złoty płaszcz.")
+
+
 #zad1
 #
 # from math import pow
@@ -9,23 +21,13 @@
 #      else:
 #          print("args ERROR")
 #          return "args error"
-# print(funkcja())
+# print(funkcja(8))
 
 #zad2
 
-# def funkcja(tekst, *szukane_wyrazy):
-#     if not szukane_wyrazy:
-#         return "brak"
-#     else:
-#         i =0
-#         slowo_kluczowe = ["komputera","skaner"]
-#         wyrazy=tekst.split()
-#         for slowo in wyrazy:
-#             if slowo.lower() in slowo_kluczowe or slowo.lower() in szukane_wyrazy:
-#                 i+=1
-#         return 1
-#
-# wyrazy = ["są","typem"]
+
+
+
 # text = 'Wczytywanie do komputera tekstów, ilustracji, fotografii, itp. jest '   \
 #        'możliwe dzięki urządzeniom zewnętrznym zwanym skanerami. Skaner to ' \
 #        'urządzenie umożliwiające wprowadzenie do komputera grafiki i tekstu. ' \
@@ -36,8 +38,13 @@
 #        'typem skanerów są skanery stacjonarne płaskie, które umożliwiają skanowanie ' \
 #        'dokumentów o formacie A3 lub A4 i ich pochodnych. Są one podłączane do ' \
 #        'komputerów przez port równoległy, uniwersalną magistralę szeregową lub sterownik SCSI.'
+# def Wyrazy(text, *args):
+#     look_in = (*args, 'komputer', 'skaner')
+#     for word in look_in:
+#         print(f"wyrazu {word} w teksie jest {text.count(word)}")
 #
-# print(funkcja(text,*wyrazy))
+# Wyrazy(text, 'komputer', 'a')
+
 
 #zad3
 
@@ -51,14 +58,11 @@
 
 #zad4
 
-# from ZdanieRozdziel import zdanie_rozdziel
-#
-# text = """Była sobie dziewczyneczka, hop sa sa, hop sa sa. Szła dzieweczka do laseczka,
-#            do zielonego, ha ha. Napotkała myśliweczka, hop sa sa. Tralala tralala."""
-#
-# zdanie_rozdziel(text, ".", True, True)
-#
-#
+
+
+
+
+
 # def zdanie_rozdziel(tekst, rozdzielacz=",", pokaz_ilosc_fragmentow=True, pokaz_ilosc_wyrazow=True):
 #     zdania = tekst.split(".")
 #
@@ -68,13 +72,16 @@
 #     if pokaz_ilosc_wyrazow == True:
 #         for zdanie in zdania:
 #             print("ilość wyrazów w podanym tekście: ", len(zdanie.split(" ")))
+# text = """Była sobie dziewczyneczka, hop sa sa, hop sa sa. Szła dzieweczka do laseczka, do zielonego, ha ha. Napotkała myśliweczka, hop sa sa. Tralala tralala."""
+#
+# zdanie_rozdziel(text, ".", True, True)
 
 # zad 6
 
 
 
 
-# from CiagGeometryczny import a, b
+# from CiągGeometryczny import a, b
 #
 # print("an wyraz:", a(7, 3, 2))
 # print("Suma:", b(10, 1, 3))
@@ -101,16 +108,10 @@
 # zad 8
 
 # import pola
-# import globals
 #
-# globals.bok_prostokata = 2
-# globals.podstawa_trojkata = 3
-# globals.wysokosc_trojkata = 1
-# globals.bok_kwadratu = 4
-#
-# print("trójkąt", pola.oblicz_pole_figur("trojkat"))
-# print("prostokąt", pola.oblicz_pole_figur("prostokat"))
-# print("kwadrat", pola.oblicz_pole_figur("kwadrat"))
+# print("Pole prostokąta:", pola.area("prostokat"))
+# print("Pole trójkąta:", pola.area("trojkat"))
+# print("Pole kwadratu:", pola.area("kwadrat"))
 
 
 #zad 9
@@ -137,31 +138,7 @@
 # print("Pole kwadratu o boku 5:", pole_prostokata(5))
 # print("Pole trójkąta o podstawie 3 i wysokości 4:", pole_trojkata(3, 4))
 # print("Pole kwadratu o boku 5:", pole_trojkata(5))
-
 #zad10
-# def pole_trojkata(a, b):
-#     return 0.5 * a * b
-# def pole_prostokata(a, b):
-#     return a * b
-# def dekorator(func):
-#     def wrapper(*args):
-#         if len(args) == 2:
-#             return args[1] * args[1]
-#         else:
-#             return func(*args)
-#     return wrapper
-# @dekorator
-# def pole(figura, a, b):
-#     if figura == "trojkat":
-#         return pole_trojkata(a, b)
-#     elif figura == "prostokat":
-#         return pole_prostokata(a, b)
-#
-# print("Pole prostokata o boku 5 i 6:", pole("prostokat", 5, 6))
-# print("Pole trójkąta o podstawie 3 i wysokości 4:", pole("trojkat", 3, 4))
-# print("Pole kwadratu o boku 5:", pole("kwadrat", 5))
-
-#zad11
 
 # def dekorator(func):
 #     def wrapper(username, password, **kwargs):
@@ -175,4 +152,24 @@
 #     return {"user": user, "password": password}
 #
 # print(logowanie("imie","haslo",host = "www.google.com", port = "USB-C"))
+#zad11
+def dec(func):
+    def wrapper(*args):
+        n, a1, q = args
+        suma = a1 * (1 - q ** n) / (1 - q) if q != 1 else n * a1
+        print(f"Suma {n} elementow wynosi: {suma}")
+        return func(*args)
+    return wrapper
 
+@dec
+def ciag_geometryczny(n, a1=1, q=2):
+    an = a1 * (q ** (n - 1)) if a1 != 1 else a1
+    return an
+
+n = 5
+a1 = 1
+q = 2
+
+# Wywołanie funkcji z dekoratorem
+an = ciag_geometryczny(n, a1, q)
+print(f"{n}-ty element ciągu wynosi: {an}")
